@@ -1,5 +1,6 @@
 // Is provided, via props, an array of objects describing different pokemon, and renders a sequence of Pokecard components.
 import { Pokecard } from "./Pokecard";
+import "./App.css";
 
 function Pokedex() {
   let pokemon = [
@@ -13,16 +14,18 @@ function Pokedex() {
     { id: 133, name: "Eevee", type: "normal", base_experience: 65 },
   ];
   return (
-    <div>
+    <div className="pokedex">
       {pokemon.map((poke) => {
         return (
-          <Pokecard
-            key={poke.id}
-            id={poke.id}
-            name={poke.name}
-            type={poke.type}
-            exp={poke.exp}
-          />
+          <div>
+            <Pokecard
+              key={poke.id}
+              id={poke.id}
+              name={poke.name}
+              type={poke.type}
+              exp={poke.base_experience}
+            />
+          </div>
         );
       })}
     </div>
